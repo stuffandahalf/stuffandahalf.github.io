@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div.header {
+    /*margin: auto;*/
+    padding: 10px;
+}
+
+div.inner {
+    margin: auto;
+    padding: 10px;
+    float: left;
+}
