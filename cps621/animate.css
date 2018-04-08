@@ -1,14 +1,10 @@
 .center {
     display: block;
-    #width: 50%;
-    #width: auto;
-    background-color: green;
     margin-left: auto;
     margin-right: auto;
 }
 
 .autosize {
-    #display: inline-block;
     display: table;
 }
 
@@ -20,6 +16,7 @@
     animation-timing-function: linear;
     #animation-play-state: playing;
     
+    #background-color: green;
 }
 
 @keyFrames title {
