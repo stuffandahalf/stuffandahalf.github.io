@@ -3,5 +3,5 @@ function fill() {
     for(i = 0; i < 100; i++) {
         str += "<br>";
     }
-    document.getElementById("Test").innerHTML = str;
+    document.getElementById("test").innerHTML = str;
 }

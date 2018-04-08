@@ -1,21 +1,35 @@
-#Test {
-    animation-name: Test;
-    animation-duration: 2s;
-    #animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    
+.center {
+    display: block;
+    #width: 50%;
+    #width: auto;
     background-color: green;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-@keyFrames Test {
+.autosize {
+    #display: inline-block;
+    display: table;
+}
+
+#title {
+    animation-name: title;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    #animation-play-state: playing;
+    
+}
+
+@keyFrames title {
     0% {
-        transform: scale(1);
-        transform: rotate(180deg);
+        transform: scale(0.75);
+        #transform: rotate(180deg);
         #opacity: 0;
     }
     100% {
-        transform: scale(1);
-        transform: rotate(360deg);
+        transform: scale(1.25);
+        #transform: rotate(360deg);
     }
 }
