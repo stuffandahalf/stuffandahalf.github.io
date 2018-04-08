@@ -28,12 +28,12 @@ body {
 }
 
 @keyFrames title {
-    0% {
+    from {
         transform: scale(0.75);
         #transform: rotate(180deg);
         #opacity: 0;
     }
-    100% {
+    to {
         transform: scale(1.25);
         #transform: rotate(360deg);
     }
@@ -44,9 +44,14 @@ body {
     animation-duration: 2s;
     #animation-direction: ;
     animation-timing-function: linear;
+    transform: (rotate(90deg));
 }
 
 @keyFrames hiro {
-    from {left: 20px;}
-    to {right: 20px;}
+    from {
+        position: left;
+    }
+    to {
+        position: right;
+    }
 }
