@@ -1,0 +1,46 @@
+* {
+    font-size: 150%;
+    font-family: Arial;
+}
+
+div {
+    opacity: 0;
+}
+
+html {
+    position: relative;
+    min-width: 1024px;
+    min-width: 768px;
+    height: 100%;
+}
+
+body {
+    background-color: green;
+    #background-image: url("src/oscar/oscar.jpg");
+    #background-image: url("src/field.gif");
+    background-image: url("src/field_cropped.gif");
+    #background-size: cover;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: white;
+    -webkit-text-stroke: 2px black;
+}
+
+.centerX {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centerY {
+    display: block;
+    margin-top: auto;
+    margin-top: auto;
+}
+
+.autosize {
+    display: table;
+}
