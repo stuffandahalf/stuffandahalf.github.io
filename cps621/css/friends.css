@@ -5,17 +5,17 @@
 
 #friends img {
     float: left;
-    width: 250;
-    height: 188;
+    height: 290px;
+    padding: 3px;
 }
 
 #friends h1 {
-
+    font-size: 70%;
 }
 
 #friends {
-    animation-title: friends;
-    animation-duration: 20s;
+    animation-name: friends;
+    animation-duration: 10s;
 }
 @keyFrames friends {
     0% {

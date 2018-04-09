@@ -7,10 +7,14 @@
  * button ->
  * intro1 ->
  * intro2 ->
- * terminology ->
  * variety ->
+ * active1 ->
+ * active2 ->
+ * relax ->
+ * playful
  * smart ->
- * 
+ * tricks ->
+ * concern ->
  * friends ->
  * credits
  */
@@ -30,7 +34,8 @@ $(document).ready(function() {
         $("#begin").css({"display": "none"});
         //intro1();
         //variety();
-        friends();
+        //smart();
+        //friends();
         //credits();
     });
 });
@@ -53,7 +58,7 @@ function intro1() {
         console.log("ended intro1");
         div.css({"display": "none"});
         intro2();
-        duration += parseInt($("#title").css("animation-duration").slice(0, -1));
+        duration += parseInt(title.css("animation-duration").slice(0, -1));
         //console.log(duration);
     });
 }
@@ -61,14 +66,14 @@ function intro1() {
 /**
  * Animate the first scene
  * 
- * intro1 -> intro2 -> terminology
+ * intro1 -> intro2 -> variety
  */
 function intro2() {
     console.log("started intro2");
     
     /* variables in this div */
     var div = $("#intro2");
-    var title = $("#intro2 #title");
+    //var title = $("#intro2 #title");
     
     div.css({"display": "block"});
     div.css({"animation-play-state": "running"});
@@ -76,7 +81,7 @@ function intro2() {
         console.log("ended intro2");
         div.css({"display": "none"});
         
-        duration += parseInt(title.css("animation-duration").slice(0, -1));
+        duration += parseInt(div.css("animation-duration").slice(0, -1));
         //console.log(duration);
         
         //terminology();
@@ -85,24 +90,9 @@ function intro2() {
 }
 
 /**
- * Animates the terminology scene
- * 
- * intro2 -> terminology -> variety
- */
-function terminology() {
-    console.log("terminology");
-    
-    var div = $("#terminology");
-    
-    div.css({"display": "block"});
-    div.css({"display": "none"});
-    variety();
-}
-
-/**
  * Animate the varieties section
  * 
- * terminology -> variety ->
+ * terminology -> variety -> active1
  */
 function variety() {
     console.log("started variety");
@@ -112,24 +102,95 @@ function variety() {
     div.css({"animation-play-state": "running"});
     
     div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
-        console.log("ended variety");
         div.css({"display": "none"});
-        // tmp
-        credits();
+
+        console.log("ended variety");
+        duration += parseInt(div.css("animation-duration").slice(0, -1));
+        active1();
     });
 }
 
 /**
+ * Animate the activities
+ * 
+ * variety -> active1 -> active2
+ */
+function active1() {
+    console.log("started active1");
+    
+    console.log("ended active1");
+    active2();
+}
+
+/**
+ * active1 -> active2 -> smart
+ */
+function active2() {
+    console.log("started active2");
+    
+    console.log("ended active2");
+    playful();
+}
+
+/**
+ * Animate the playful section
+ * 
+ * active2 -> playful ->smart
+ */
+function playful() {
+    console.log("started playful");
+    var div = $("#playful");
+    
+    console.log("ended playful");
+    smart();
+}
+
+/**
  * Animate the intelligence section
+ * 
+ * playful -> smart -> tricks
  */
 function smart() {
+    console.log("started smart");
+    var div = $("#smart");
+    var hiro = $("#smart #hiro");
     
+    div.css({"display": "block"});
+    hiro.css({"animation-play-state": "running"});
+    console.log(hiro.css("animation-play-state"));
+    hiro.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
+        div.css({"display": "none"});
+    
+        console.log("ended smart");
+        duration += parseInt(hiro.css("animation-duration").slice(0, -1));
+        tricks();
+    });
+}
+
+/**
+ * animate the tricks
+ * 
+ * smart -> tricks -> concern
+ */
+function tricks() {
+    console.log("started tricks");
+    
+    console.log("ended tricks");
+}
+
+/**
+ * animate concern
+ * 
+ * tricks -> concern -> friends
+ */
+function concern() {
+    friends();
 }
 
 /**
  * Animate the friends frame
  * 
- * -> friends -> credits
+ * concern-> friends -> credits
  */
 function friends() {
     console.log("friends");
@@ -141,6 +202,7 @@ function friends() {
     
     div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
         console.log("ended friends");
+        duration += parseInt(div.css("animation-duration").slice(0, -1));
         credits();
     });
 }
@@ -158,6 +220,7 @@ function credits() {
     div.css({"display": "block"});
     text.css({"animation-play-state": "running"});
     console.log("end");
+    duration += parseInt(text.css("animation-duration").slice(0, -1));
     console.log(duration);
 }
 

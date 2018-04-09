@@ -1,0 +1,49 @@
+/* smart.css        */
+/* Gregory Norton   */
+/* 500766165        */
+/* CPS621           */
+
+#smart img{
+    height: 480px;
+}
+
+#smart {
+    animation-name: smart;
+    animation-duration: 10s;
+}
+@keyFrames smart {
+    0% {
+        transform: translateY(-200px);
+    }
+    15% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-200px);
+    }
+}
+
+#smart #hiro {
+    animation-name: smart_hiro;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    
+    position: relative;
+}
+@keyFrames smart_hiro {
+    0% {
+        transform: translateX(-600px);
+    }
+    15% {
+        transform: translateX(400px);
+    }
+    75% {
+        transform: translateX(400px);
+    }
+    100% {
+        transform: translateX(-600px);
+    }
+}

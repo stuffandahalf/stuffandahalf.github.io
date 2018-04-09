@@ -17,6 +17,7 @@ html {
     min-width: 1024px;
     min-width: 768px;
     height: 100%;
+    margin: 1;
 }
 
 body {

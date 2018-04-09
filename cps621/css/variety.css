@@ -5,8 +5,9 @@
 
 #variety img {
     float: left;
-    width: 330px;
-    height: 248px;
+    /*width: 330px;*/
+    /*width: 330px;*/
+    height: 270px;
     padding: 3px;
 }
 
@@ -23,6 +24,9 @@
 }
 @keyFrames variety {
     0% {
+        opacity: 1;
+    }
+    66% {
         opacity: 1;
     }
     100% {
