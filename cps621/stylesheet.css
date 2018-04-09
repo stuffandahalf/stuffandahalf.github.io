@@ -16,9 +16,7 @@ html {
 
 body {
     background-color: green;
-    #background-image: url("src/oscar/oscar.jpg");
-    #background-image: url("src/field.gif");
-    background-image: url("src/field_cropped.gif");
+    background-image: url("src/field/field_cropped.gif");
     #background-size: cover;
     background-size: 100% 100%;
     background-repeat: no-repeat;
