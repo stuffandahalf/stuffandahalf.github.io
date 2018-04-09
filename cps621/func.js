@@ -33,7 +33,7 @@ var duration = 0;
 $(document).ready(function() {
     $("#begin").click(function() {
         $("#begin").css({"display": "none"});
-        //intro1();
+        intro1();
         //active1();
         //active2();
         //variety();
@@ -41,7 +41,7 @@ $(document).ready(function() {
         //playful();
         //smart();
         //trick1();
-        trick2();
+        //trick2();
         //concern();
         //friends();
         //credits();
