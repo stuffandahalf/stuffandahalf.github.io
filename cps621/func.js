@@ -33,8 +33,14 @@ $(document).ready(function() {
     $("#begin").click(function() {
         $("#begin").css({"display": "none"});
         //intro1();
+        //active1();
+        //active2();
         //variety();
+        relax();
+        //playful();
         //smart();
+        //tricks();
+        //concern();
         //friends();
         //credits();
     });
@@ -47,19 +53,16 @@ $(document).ready(function() {
  */
 function intro1() {
     console.log("started intro1");
-    
     var div = $("#intro1");
     var title = $("#intro1 #title");
     
     /* enabling the animation and waiting for it to end */
     div.css({"display": "block"});
-    title.css({"animation-play-state": "running"});
     title.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
         console.log("ended intro1");
         div.css({"display": "none"});
-        intro2();
         duration += parseInt(title.css("animation-duration").slice(0, -1));
-        //console.log(duration);
+        intro2();
     });
 }
 
@@ -70,21 +73,14 @@ function intro1() {
  */
 function intro2() {
     console.log("started intro2");
-    
-    /* variables in this div */
     var div = $("#intro2");
     //var title = $("#intro2 #title");
     
     div.css({"display": "block"});
-    div.css({"animation-play-state": "running"});
     div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
-        console.log("ended intro2");
         div.css({"display": "none"});
-        
+        console.log("ended intro2");
         duration += parseInt(div.css("animation-duration").slice(0, -1));
-        //console.log(duration);
-        
-        //terminology();
         variety();
     });
 }
@@ -99,11 +95,8 @@ function variety() {
     var div = $("#variety");
     
     div.css({"display": "block"});
-    div.css({"animation-play-state": "running"});
-    
     div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
         div.css({"display": "none"});
-
         console.log("ended variety");
         duration += parseInt(div.css("animation-duration").slice(0, -1));
         active1();
@@ -117,32 +110,69 @@ function variety() {
  */
 function active1() {
     console.log("started active1");
+    var div = $("#active1");
+    var title = $("#active1 #title");
+    var hiro = $("#active1 #hiro");
     
-    console.log("ended active1");
-    active2();
+    div.css({"display": "block"});
+    title.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
+        div.css({"display": "none"});
+        console.log("ended active1");
+        duration += parseInt(title.css("animation-duration").slice(0, -1));
+        active2();
+    });
 }
 
 /**
- * active1 -> active2 -> smart
+ * active1 -> active2 -> relax
  */
 function active2() {
     console.log("started active2");
+    var div = $("#active2");
+    var title = $("#active2 #title");
+    var hiro = $("#active2 #hiro");
     
-    console.log("ended active2");
-    playful();
+    div.css({"display": "block"});
+    div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
+        div.css({"display": "none"});
+        console.log("ended active2");
+        duration += parseInt(div.css("animation-duration").slice(0, -1));
+        relax();
+    });
+}
+
+/**
+ * active2 -> relax -> playful
+ */
+function relax() {
+    console.log("started relax");
+    var div = $("#relax");
+    
+    div.css({"display": "block"});
+    div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
+        div.css({"display": "none"});
+        console.log("ended active2");
+        duration += parseInt(div.css("animation-duration").slice(0, -1));
+        playful();
+    });
 }
 
 /**
  * Animate the playful section
  * 
- * active2 -> playful ->smart
+ * relax -> playful ->smart
  */
 function playful() {
     console.log("started playful");
     var div = $("#playful");
     
-    console.log("ended playful");
-    smart();
+    div.css({"display": "block"});
+    div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
+        div.css({"display": "none"});
+        console.log("ended playful");
+        duration += parseInt(div.css("animation-duration").slice(0, -1));
+        smart();
+    });
 }
 
 /**
@@ -156,11 +186,8 @@ function smart() {
     var hiro = $("#smart #hiro");
     
     div.css({"display": "block"});
-    hiro.css({"animation-play-state": "running"});
-    console.log(hiro.css("animation-play-state"));
     hiro.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
         div.css({"display": "none"});
-    
         console.log("ended smart");
         duration += parseInt(hiro.css("animation-duration").slice(0, -1));
         tricks();

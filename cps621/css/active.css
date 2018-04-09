@@ -1,0 +1,68 @@
+/* active.css       */
+/* Gregory Norton   */
+/* 500766165        */
+/* CPS621           */
+
+#active1 #title{
+    animation-name: active1_title;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+}
+@keyFrames active1_title {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#active1 #hiro {
+    animation-name: active1_hiro;
+    animation-duration: 5s;
+    animation-iteration-count: 2;
+    
+    position: absolute;
+    width: 240px;
+    bottom: 20px;
+}
+@keyFrames active1_hiro {
+    0% {
+        transform: translateX(512px);
+    }
+    50% {
+        transform: translateX(0px)
+    }
+    100% {
+        transform: translateX(750px);
+    }
+}
+
+#active2 video {
+    width: 250px;
+}
+
+#active2 {
+    animation-name: active2;
+    animation-duration: 5s;
+}
+@keyFrames active2 {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
