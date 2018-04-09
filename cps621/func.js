@@ -1,3 +1,15 @@
+/* func.js        */
+/* Gregory Norton */
+/* 500766165      */
+/* CPS621         */
+
+/*
+ * button ->
+ * intro1 ->
+ * intro2 ->
+ * terminology ->
+ * 
+
 /**
  * Variable to keep track of the duration
  * of the animation
@@ -6,38 +18,25 @@
 var duration = 0;
 
 /**
- * different scenes
- */
-/*var intro_scene = {
-    div: $("#intro"),
-    title: $("#intro #title")
-};
-
-var scene1 = {
-    div: $("#scene1"),
-    title: $("#scene1 #title")
-};*/
-
-/**
  * Link begin button to start first animation secuence once document is loaded
  */
 $(document).ready(function() {
     $("#begin").click(function() {
         $("#begin").css({"display": "none"});
-        // new Intro();
-        //Intro.intro();
-        intro();
+        intro1();
     });
 });
 
 /**
  * Animates the intro scene
+ * 
+ * intro -> terminology
  */
-function intro() {
-    console.log("intro frame");
+function intro1() {
+    console.log("intro1 frame");
     
-    var div = $("#intro");
-    var title = $("#intro #title");
+    var div = $("#intro1");
+    var title = $("#intro1 #title");
     
     /* enabling the animation and waiting for it to end */
     div.css({"display": "block"});
@@ -45,38 +44,60 @@ function intro() {
     title.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
         console.log("finished intro animation");
         div.css({"display": "none"});
-        scene1();
+        intro2();
         //credits();
-        
+        duration += parseInt($("#title").css("animation-duration").slice(0, -1));
+        console.log(duration);
     });
-    
-    duration += parseInt($("#title").css("animation-duration").slice(0, -1));
-    console.log(duration);
 }
 
 /**
  * Animate the first scene
+ * 
+ * terminology -> scene1 -> scene2
  */
-function scene1() {
+function intro2() {
     console.log("scene1");
     
     /* variables in this div */
-    var div = $("#scene1");
-    var title = $("#scene1 #title");
+    var div = $("#intro2");
+    var title = $("#intro2 #title");
     
     div.css({"display": "block"});
-    title.css({"animation-play-state": "running"});
-    title.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
+    div.css({"animation-play-state": "running"});
+    div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
         console.log("finished scene1");
         div.css({"display": "none"});
-        scene2();
+        
+        var delay = 5000;
+        setTimeout(function() {
+            terminology();
+        }, delay);
+        duration += delay / 1000;
+        duration += parseInt(title.css("animation-duration").slice(0, -1));
+        console.log(duration);
     });
-    duration += parseInt(title.css("animation-duration").slice(0, -1));
-    console.log(duration);
+}
+
+/**
+ * Animates the terminology scene
+ * 
+ * intro -> terminology -> scene1
+ */
+function terminology() {
+    console.log("terminology");
+    
+    var div = $("#terminology");
+    
+    div.css({"display": "block"});
+    
+    div.css({"display": "none"});
 }
 
 /**
  * Animate the second scene
+ * 
+ * scene1 -> scene2 -> scene3
  */
 function scene2() {
     console.log("scene2");
