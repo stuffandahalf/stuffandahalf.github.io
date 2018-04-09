@@ -11,6 +11,7 @@
     animation-name: smart;
     animation-duration: 10s;
     animation-timing-function: linear;
+    /*animation-play-state: paused;*/
 }
 @keyFrames smart {
     0% {
@@ -31,7 +32,9 @@
     animation-name: smart_hiro;
     animation-duration: 10s;
     animation-timing-function: ease-in-out;
+    /*animation-play-state: paused;*/
     
+    bottom: 0;
     position: relative;
 }
 @keyFrames smart_hiro {
