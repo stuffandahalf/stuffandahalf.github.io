@@ -8,12 +8,22 @@
     animation-duration: 3s;
     animation-timing-function: linear;
     animation-play-state: paused;
+    
+    text-align: center;
 }
 @keyFrames text {
-    from {
-        
+    0% {
+        opacity: 0;
+        transform: rotate(0deg);
     }
-    to {
-        
+    66% {
+        opacity: 1;
+        transform: rotate(360deg);
     }
+    /*100% {
+        opacity: 1;
+        transform: rotate(0deg);
+    }*/
 }
+
+/* I have no idea why it does a second rotate but it does not look bad */

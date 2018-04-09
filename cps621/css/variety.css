@@ -1,0 +1,31 @@
+/* variety.css   */
+/* Gregory Norton   */
+/* 500766165        */
+/* CPS621           */
+
+#variety img {
+    float: left;
+    width: 330px;
+    height: 248px;
+    padding: 3px;
+}
+
+#variety h1 {
+    font-size: 70%;
+}
+
+#variety {
+    animation-name: variety;
+    animation-duration: 15s;
+    /*animation-duration: 3s;*/
+    animation-timing-function: linear;
+    animation-play-state: paused;
+}
+@keyFrames variety {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

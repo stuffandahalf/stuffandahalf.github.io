@@ -1,0 +1,27 @@
+/* friends.css      */
+/* Gregory Norton   */
+/* 500766165        */
+/* CPS621           */
+
+#friends img {
+    float: left;
+    width: 250;
+    height: 188;
+}
+
+#friends h1 {
+
+}
+
+#friends {
+    animation-title: friends;
+    animation-duration: 20s;
+}
+@keyFrames friends {
+    0% {
+    
+    }
+    100% {
+    
+    }
+}

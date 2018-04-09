@@ -8,7 +8,12 @@
  * intro1 ->
  * intro2 ->
  * terminology ->
+ * variety ->
+ * smart ->
  * 
+ * friends ->
+ * credits
+ */
 
 /**
  * Variable to keep track of the duration
@@ -23,17 +28,20 @@ var duration = 0;
 $(document).ready(function() {
     $("#begin").click(function() {
         $("#begin").css({"display": "none"});
-        intro1();
+        //intro1();
+        //variety();
+        friends();
+        //credits();
     });
 });
 
 /**
  * Animates the intro scene
  * 
- * intro -> terminology
+ * intro1 -> intro2
  */
 function intro1() {
-    console.log("intro1 frame");
+    console.log("started intro1");
     
     var div = $("#intro1");
     var title = $("#intro1 #title");
@@ -42,22 +50,21 @@ function intro1() {
     div.css({"display": "block"});
     title.css({"animation-play-state": "running"});
     title.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
-        console.log("finished intro animation");
+        console.log("ended intro1");
         div.css({"display": "none"});
         intro2();
-        //credits();
         duration += parseInt($("#title").css("animation-duration").slice(0, -1));
-        console.log(duration);
+        //console.log(duration);
     });
 }
 
 /**
  * Animate the first scene
  * 
- * terminology -> scene1 -> scene2
+ * intro1 -> intro2 -> terminology
  */
 function intro2() {
-    console.log("scene1");
+    console.log("started intro2");
     
     /* variables in this div */
     var div = $("#intro2");
@@ -66,23 +73,21 @@ function intro2() {
     div.css({"display": "block"});
     div.css({"animation-play-state": "running"});
     div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
-        console.log("finished scene1");
+        console.log("ended intro2");
         div.css({"display": "none"});
         
-        var delay = 5000;
-        setTimeout(function() {
-            terminology();
-        }, delay);
-        duration += delay / 1000;
         duration += parseInt(title.css("animation-duration").slice(0, -1));
-        console.log(duration);
+        //console.log(duration);
+        
+        //terminology();
+        variety();
     });
 }
 
 /**
  * Animates the terminology scene
  * 
- * intro -> terminology -> scene1
+ * intro2 -> terminology -> variety
  */
 function terminology() {
     console.log("terminology");
@@ -90,25 +95,70 @@ function terminology() {
     var div = $("#terminology");
     
     div.css({"display": "block"});
-    
     div.css({"display": "none"});
+    variety();
 }
 
 /**
- * Animate the second scene
+ * Animate the varieties section
  * 
- * scene1 -> scene2 -> scene3
+ * terminology -> variety ->
  */
-function scene2() {
-    console.log("scene2");
-    credits();
+function variety() {
+    console.log("started variety");
+    var div = $("#variety");
+    
+    div.css({"display": "block"});
+    div.css({"animation-play-state": "running"});
+    
+    div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
+        console.log("ended variety");
+        div.css({"display": "none"});
+        // tmp
+        credits();
+    });
+}
+
+/**
+ * Animate the intelligence section
+ */
+function smart() {
+    
+}
+
+/**
+ * Animate the friends frame
+ * 
+ * -> friends -> credits
+ */
+function friends() {
+    console.log("friends");
+    
+    var div = $("#friends");
+    
+    div.css({"display": "block"});
+    div.css({"animation-play-state": "running"});
+    
+    div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
+        console.log("ended friends");
+        credits();
+    });
 }
 
 /**
  * Animate the credits
+ * 
+ * friends -> credits
  */
 function credits() {
     console.log("credits");
+    var div = $("#credits");
+    var text = $("#credits #text");
+    
+    div.css({"display": "block"});
+    text.css({"animation-play-state": "running"});
+    console.log("end");
+    console.log(duration);
 }
 
 function changeBackground() {
