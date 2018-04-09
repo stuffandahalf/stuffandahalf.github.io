@@ -1,0 +1,14 @@
+#credits #text {
+    animation-name: text;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+}
+@keyFrames text {
+    from {
+        
+    }
+    to {
+        
+    }
+}

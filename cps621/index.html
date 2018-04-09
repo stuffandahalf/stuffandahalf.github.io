@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Stylesheets used -->
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
-        <link rel="stylesheet" type="text/css" href="css/title.css">
-        <!--<link rel="stylesheet" type="text/css" href="css/intro.css">-->
-        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">-->
+        <link rel="stylesheet" type="text/css" href="css/intro.css">
+        <link rel="stylesheet" type="text/css" href="css/scene1.css">
         
+        <link rel="stylesheet" type="text/css" href="css/credits.css">
+        
+        <!-- jQuery and local script -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script language="javascript" src="func.js"></script>
         
+        <!-- Meta information -->
         <meta charset="utf-8" />
+        
+        <!-- Title of page -->
         <title>CPS621 Final</title>
     </head>
 
     <body id="body">
+        <!-- button to begin animation -->
         <button id="begin" class="centerX centerY">Begin</button>
         
+        <!-- div containing the introduction -->
         <div id="intro">
             <h1 class="autosize centerX" id="title">How Great are Dogs?</h1>
         </div>
         
+        <!-- first scene -->
+        
         <div id="scene1">
-            <p>Test</p>
+            <h1 id="title">Dogs Are Pretty Great!</h1>
         </div>
         
-        <div id="credits" style="display: block; opacity: 1;">
-            <p class="centerX">All photos, videos, and audio were either recorded by myself or by my friends and used with their permission.</p>
+        <!-- credits -->
+        <div id="credits" style="display: none; opacity: 1;">
+            <p class="centerX" id="text">All photos, videos, and audio were either recorded by myself or by my friends and used with their permission.</p>
         </div>
         
         <!--<video id="hiro" width="240" height="320" autoplay loop>

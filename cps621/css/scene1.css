@@ -1,0 +1,14 @@
+#scene1 #title {
+    animation-name: title;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+}
+@keyFrames title {
+    0% {
+        
+    }
+    100% {
+    
+    }
+}

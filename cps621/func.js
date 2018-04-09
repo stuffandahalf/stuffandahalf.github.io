@@ -1,37 +1,93 @@
+/**
+ * Variable to keep track of the duration
+ * of the animation
+ * @type {int}
+ */
+var duration = 0;
+
+/**
+ * different scenes
+ */
+/*var intro_scene = {
+    div: $("#intro"),
+    title: $("#intro #title")
+};
+
+var scene1 = {
+    div: $("#scene1"),
+    title: $("#scene1 #title")
+};*/
+
+/**
+ * Link begin button to start first animation secuence once document is loaded
+ */
 $(document).ready(function() {
     $("#begin").click(function() {
         $("#begin").css({"display": "none"});
-        animate();
+        // new Intro();
+        //Intro.intro();
+        intro();
     });
 });
 
-function animate() {
-    console.log("animate");
-    title();
-    frame1();
-}
-
-function title() {
+/**
+ * Animates the intro scene
+ */
+function intro() {
+    console.log("intro frame");
+    
     var div = $("#intro");
-    var title = $("#title");
+    var title = $("#intro #title");
+    
+    /* enabling the animation and waiting for it to end */
     div.css({"display": "block"});
     title.css({"animation-play-state": "running"});
     title.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
-        console.log("finished animation");
+        console.log("finished intro animation");
         div.css({"display": "none"});
+        scene1();
+        //credits();
+        
     });
-    //delay += parseInt($("#title").css("animation-duration").slice(0, -1));
-    //console.log(delay);
     
-    
+    duration += parseInt($("#title").css("animation-duration").slice(0, -1));
+    console.log(duration);
 }
 
-/*function fill() {
-    var str = ""
-    for(i = 0; i < 100; i++) {
-        str += "<br>";
-    }
-    document.getElementById("test").innerHTML = str;
+/**
+ * Animate the first scene
+ */
+function scene1() {
+    console.log("scene1");
+    
+    /* variables in this div */
+    var div = $("#scene1");
+    var title = $("#scene1 #title");
+    
+    div.css({"display": "block"});
+    title.css({"animation-play-state": "running"});
+    title.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
+        console.log("finished scene1");
+        div.css({"display": "none"});
+        scene2();
+    });
+    duration += parseInt(title.css("animation-duration").slice(0, -1));
+    console.log(duration);
+}
+
+/**
+ * Animate the second scene
+ */
+function scene2() {
+    console.log("scene2");
+    credits();
+}
+
+/**
+ * Animate the credits
+ */
+function credits() {
+    console.log("credits");
 }
 
 function changeBackground() {
@@ -45,49 +101,4 @@ function changeBackground() {
         document.body.style.backgroundImage = "url('src/oscar/oscar.jpg')";
     }
     //document.body.style.backgroundImage = "url('src/oscar/oscar.jpg')";
-}*/
-
-//function title() {
-function tmp() {
-    $("#intro").addClass("animated");
-    
-    /*$("#intro").css("animation-duration: 5s");
-    $("#intro").addClass("bounceIn");
-    $("#intro").css("animation-duration: 3s");
-    $("#intro").addClass("bounceOut");*/
-    $("#intro").animateCss("bounceIn", function() {
-        $("#intro").animateCss("bounceOut");
-    });
 }
-
-function frame1() {
-    console.log("hello");
-    //$("#scene1").addClass("animated bounceIn");
-}
-
-/*$.fn.extend({
-    animateCss: function(animationName, callback) {
-        var animationEnd = (function(el) {
-            var animations = {
-                animation: 'animationend',
-                OAnimation: 'oAnimationEnd',
-                MozAnimation: 'mozAnimationEnd',
-                WebkitAnimation: 'webkitAnimationEnd',
-            };
-
-            for (var t in animations) {
-                if (el.style[t] !== undefined) {
-                    return animations[t];
-                }
-            }
-        })(document.createElement('div'));
-
-        this.addClass('animated ' + animationName).one(animationEnd, function() {
-            $(this).removeClass('animated ' + animationName);
-
-            if (typeof callback === 'function') callback();
-        });
-
-        return this;
-    },
-});*/
