@@ -37,7 +37,7 @@ $(document).ready(function() {
         /* launch a scene on button press
          * intro1 is the beginning
          */
-        intro1();
+        //intro1();
         //active1();
         //active2();
         //variety();
@@ -224,7 +224,7 @@ function trick1() {
  * trick1 -> trick2 -> concern
  */
 function trick2() {
-    console.log("started trick1");
+    console.log("started trick2");
     var div = $("#trick2");
     
     div.css({"display": "block"});
