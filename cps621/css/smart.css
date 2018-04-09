@@ -3,7 +3,7 @@
 /* 500766165        */
 /* CPS621           */
 
-#smart img{
+#smart img {
     height: 480px;
 }
 
@@ -11,7 +11,6 @@
     animation-name: smart;
     animation-duration: 10s;
     animation-timing-function: linear;
-    animation-play-state: paused;
 }
 @keyFrames smart {
     0% {

@@ -3,6 +3,7 @@
 /* 500766165      */
 /* CPS621         */
 
+/* How the logic works */
 /*
  * button ->
  * intro1 ->
@@ -33,6 +34,9 @@ var duration = 0;
 $(document).ready(function() {
     $("#begin").click(function() {
         $("#begin").css({"display": "none"});
+        /* launch a scene on button press
+         * intro1 is the beginning
+         */
         intro1();
         //active1();
         //active2();
@@ -239,9 +243,19 @@ function trick2() {
  */
 function concern() {
     console.log("started concern");
+    var div = $("#concern");
+    var bark = $("#concern #bark");
+    console.log(bark);
     
-    console.log("ended concern");
-    friends();
+    div.css({"display": "block"});
+    bark.trigger("play");
+    div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
+        div.css({"display": "none"});
+        bark.trigger("pause");
+        console.log("ended concern");
+        duration += parseInt(div.css("animation-duration").slice(0, -1));
+        friends();
+    });
 }
 
 /**
