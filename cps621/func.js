@@ -13,7 +13,8 @@
  * relax ->
  * playful
  * smart ->
- * tricks ->
+ * trick1 ->
+ * trick2 ->
  * concern ->
  * friends ->
  * credits
@@ -36,10 +37,11 @@ $(document).ready(function() {
         //active1();
         //active2();
         //variety();
-        relax();
+        //relax();
         //playful();
         //smart();
-        //tricks();
+        //trick1();
+        trick2();
         //concern();
         //friends();
         //credits();
@@ -178,7 +180,7 @@ function playful() {
 /**
  * Animate the intelligence section
  * 
- * playful -> smart -> tricks
+ * playful -> smart -> trick1
  */
 function smart() {
     console.log("started smart");
@@ -190,19 +192,44 @@ function smart() {
         div.css({"display": "none"});
         console.log("ended smart");
         duration += parseInt(hiro.css("animation-duration").slice(0, -1));
-        tricks();
+        trick1();
     });
 }
 
 /**
  * animate the tricks
  * 
- * smart -> tricks -> concern
+ * smart -> trick1 -> trick2
  */
-function tricks() {
-    console.log("started tricks");
+function trick1() {
+    console.log("started trick1");
+    var div = $("#trick1");
     
-    console.log("ended tricks");
+    div.css({"display": "block"});
+    div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
+        div.css({"display": "none"});
+        console.log("ended trick1");
+        duration += parseInt(div.css("animation-duration").slice(0, -1));
+        trick2();
+    });
+}
+
+/**
+ * animate the second trick
+ * 
+ * trick1 -> trick2 -> concern
+ */
+function trick2() {
+    console.log("started trick1");
+    var div = $("#trick2");
+    
+    div.css({"display": "block"});
+    div.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(e) {
+        div.css({"display": "none"});
+        console.log("ended trick2");
+        duration += parseInt(div.css("animation-duration").slice(0, -1));
+        concern();
+    });
 }
 
 /**
@@ -211,6 +238,9 @@ function tricks() {
  * tricks -> concern -> friends
  */
 function concern() {
+    console.log("started concern");
+    
+    console.log("ended concern");
     friends();
 }
 

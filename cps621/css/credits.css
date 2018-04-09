@@ -9,8 +9,6 @@
     animation-timing-function: linear;
     animation-play-state: paused;
     
-    /*text-align: center;*/
-    /*margin-left: 5;*/
     font-size: 100%;
 }
 @keyFrames text {
