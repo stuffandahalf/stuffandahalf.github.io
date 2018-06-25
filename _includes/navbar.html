@@ -6,10 +6,10 @@
     
     <div class="collapse navbar-collapse" id="menubar">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+            <li id="navbar-home" class="nav-item">
                 <a class="nav-link" href="/">Home</a>
             </li>
-            <li id="navbar_contact" class="nav-item">
+            <li id="navbar-contact" class="nav-item">
                 <a class="nav-link" href="/contact">Contact Me</a>
             </li>
         </ul>
@@ -19,6 +19,6 @@
 <script>
 window.onload = function() {
     var pageName = document.querySelector("meta[name=\"pageName\"]").getAttribute("content");
-    document.getElementById("navbar_" + pageName).classList.add('active');
+    document.getElementById("navbar-" + pageName).classList.add('active');
 }
 </script>
