@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="/">Gregory Norton</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menubar" aria-controls="menubar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -17,8 +17,15 @@
 </nav>
 
 <script>
-window.onload = function() {
+/*window.onload = function() {
     var pageName = document.querySelector("meta[name=\"pageName\"]").getAttribute("content");
     document.getElementById("navbar-" + pageName).classList.add('active');
-}
+}*/
+$(function () {
+    var url = window.location;
+    $('nav div ul a[href="' + url + '"]').parent().addClass('active');
+    $('nav div ul a').filter(function () {
+        return url.href.startsWith(this.href);
+    }).parent().addClass('active');
+});
 </script>
