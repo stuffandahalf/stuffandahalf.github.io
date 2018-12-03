@@ -1,19 +1,145 @@
 ---
 ---
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         {% include header.html %}
-        <title>Projects</title>
+        <meta name="pagename" content="Projects" />
+        <title>Projects - Gregory Norton</title>
+        <style>
+            .project {
+                display: inline-block;
+                width: 30%;
+                padding-bottom: 2%;
+            }
+            
+            @media screen and (max-width: 960px) {
+                .project {
+                    display: initial;
+                }
+            }
+            
+            #projects * {
+                text-align: initial;
+            }
+        </style>
     </head>
 
     <body>
         {% include navbar.html %}
         
-        <main>
-        
+        <main role="main">
+            <div class="container text-center" id="title">
+                <h1>Some Of My Projects</h1>
+                <h4>More can be found at <a href="https://github.com/stuffandahalf">my github</a></h4>
+            </div>
+            
+            <div class="container text-center" id="projects">
+                <div class="container project" id="assembler">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="gasm.html">Greg's Assembler</a></h5>
+                            <hr>
+                            <p class="card-text">My Retargetable Macro Assembler</p>
+                            <p class="card-text">Currently targetting MC6809 and HD6309 processors.</p>
+                            <p class="card-text">Plans to support other vintage 8-bit cpus (6502, z80, etc)</p>
+                            <dl>
+                                <dt>Built with:</dt>
+                                <dd>
+                                    <ul>
+                                        <li>C</li>
+                                        <li>Lex/Flex</li>
+                                        <li>Yacc/Bison</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container project" id="pulseaudiotool">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="https://github.com/stuffandahalf/PulseAudioTool">PulseAudioTool</a></h5>
+                            <hr>
+                            <p class="card-text">Tool I developed to workaround my microphone automatically lowering it's volume.</p>
+                            <dl>
+                                <dt>Built with:</dt>
+                                <dd>
+                                    <ul>
+                                        <li>Python</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container project" id="quickkeys">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="quickkeys.html">QuickKeys</a></h5>
+                            <hr>
+                            <p class="card-text">Macro keypad to simplify repetitive or complex keystrokes</p>
+                            <p class="card-text">Comprised of keypad firmware with companion desktop application to receive and transform inputs.</p>
+                            <dl>
+                                <dt>Built with:</dt>
+                                <dd>
+                                    <ul>
+                                        <li>C++ (Arduino)</li>
+                                        <li>Rust</li>
+                                        <li>Python</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container project" id="website">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="https://github.com/stuffandahalf/stuffandahalf.github.io">This Website</a></h5>
+                            <hr>
+                            <p class="card-text">This site is a place to provide information about me and my projects.</p>
+                            <dl>
+                                <dt>Built with:</dt>
+                                <dd>
+                                    <ul>
+                                        <li>HTML</li>
+                                        <li>CSS (+ Bootstrap)</li>
+                                        <li>Javascript (+ jQuery)</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container project" id="os">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="https://github.com/stuffandahalf/GANIX">Operating System</a></h5>
+                            <hr>
+                            <p class="card-text">Operating system I'm writing to learn more about how they work.</p>
+                            <p class="card-text">Currently only at the bootloader phase.</p>
+                            <dl>
+                                <dt>Built with:</dt>
+                                <dd>
+                                    <ul>
+                                        <li>C</li>
+                                        <li>x86 Assembly (AT&T and Intel syntax)</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </main>
         
-        {% include footer.html %}
+        {% include scripts.html %}
     </body>
 </html>

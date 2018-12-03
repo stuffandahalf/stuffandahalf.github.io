@@ -5,16 +5,8 @@
     <head>
         {% include header.html %}
         <meta name="pagename" content="Industry experience" />
-        <title>Industry Experience</title>
-        
-        <style>
-            #mohltc {
-                width: 60%;
-                margin: auto;
-            }
-        </style>
+        <title>Industry Experience - Gregory Norton</title>
     </head>
-
     <body>
         {% include navbar.html %}
         
@@ -26,23 +18,30 @@
                         <h3 class="card-title">Ministry of Health and Long-Term Care</h3>
                         <h6 class="card-subtitle">May 2018 - Present</h6>
                         <hr>
-                        
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div id="quicked" class="card-container">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">QuickEd</h3>
-                        <h6 class="card-subtitle">April 2015 - June 2016</h6>
-                        <hr>
-                        
+                        <dl>
+                            <dt>Ambulance Service Review (ASR)</dt>
+                            <dd>
+                                <ul>
+                                    <li>Lead developer on architecture redesign.</li>
+                                    <li>Reduced >50 hours per year from internal development time by automating document parsing and data updating.</li>
+                                    <li>Reduced business workload by allowing them to directly update data.</li>
+                                </ul>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>Updated Development Workflow</dt>
+                            <dd>
+                                <ul>
+                                    <li>Participated in initial research and configuration of Jenkins continuous integration.</li>
+                                    <li>Assisted in migration of existing code bases to Github.</li>
+                                </ul>
+                            </dd>
+                        </dl>
                     </div>
                 </div>
             </div>
         </main>
         
-        {% include footer.html %}
+        {% include scripts.html %}
     </body>
 </html>
