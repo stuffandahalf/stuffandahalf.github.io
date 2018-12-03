@@ -7,19 +7,7 @@
         {% include header.html %}
         <meta name="pagename" content="Projects" />
         <title>Projects - Gregory Norton</title>
-        <style>
-            .project {
-                display: inline-block;
-                width: 30%;
-                padding-bottom: 2%;
-            }
-            
-            @media screen and (max-width: 960px) {
-                .project {
-                    display: initial;
-                }
-            }
-            
+        <style>            
             #projects * {
                 text-align: initial;
             }
@@ -36,7 +24,7 @@
             </div>
             
             <div class="container text-center" id="projects">
-                <div class="container project" id="assembler">
+                <div class="container showcase" id="assembler">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><a href="gasm.html">Greg's Assembler</a></h5>
@@ -58,7 +46,7 @@
                     </div>
                 </div>
                 
-                <div class="container project" id="pulseaudiotool">
+                <div class="container showcase" id="pulseaudiotool">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><a href="https://github.com/stuffandahalf/PulseAudioTool">PulseAudioTool</a></h5>
@@ -76,7 +64,7 @@
                     </div>
                 </div>
                 
-                <div class="container project" id="quickkeys">
+                <div class="container showcase" id="quickkeys">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><a href="quickkeys.html">QuickKeys</a></h5>
@@ -97,7 +85,7 @@
                     </div>
                 </div>
                 
-                <div class="container project" id="website">
+                <div class="container showcase" id="website">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><a href="https://github.com/stuffandahalf/stuffandahalf.github.io">This Website</a></h5>
@@ -117,7 +105,7 @@
                     </div>
                 </div>
 
-                <div class="container project" id="os">
+                <div class="container showcase" id="os">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><a href="https://github.com/stuffandahalf/GANIX">Operating System</a></h5>
@@ -136,7 +124,24 @@
                         </div>
                     </div>
                 </div>
-
+                
+                <div class="container showcase" id="hm62256_library">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="hm62256.html">Arduino SRAM Library</a></h5>
+                            <hr>
+                            <p class="card-text">Arduino library to interface with Hitachi HM62256 static ram modules.</p>
+                            <dl>
+                                <dt>Built with:</dt>
+                                <dd>
+                                    <ul>
+                                        <li>C++ (Arduino)</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         
