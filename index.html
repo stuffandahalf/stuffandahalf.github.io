@@ -1,82 +1,115 @@
 ---
 ---
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         {% include header.html %}
-        <link rel="stylesheet" href="stylesheet.css">
-        <meta name="pageName" content="home" />
+        <meta name="pagename" content="Home page" />
         <title>Gregory Norton</title>
+        
+        <style>
+            img {
+                width: 25%;
+            }
+            
+            @media screen and (max-width: 960px) {
+                img {
+                    width: 60%;
+                }
+            }
+        </style>
     </head>
     <body>
         {% include navbar.html %}
-        <div id="bio" class="header">
-            <h1>Gregory Norton</h1>
-            <h2>About Me</h2>
-            <p>Third year computer science student at Ryerson University. </p>
-            <a href="https://github.com/stuffandahalf">My Github</a>
-            <a href="mailto:gregory.norton@me.com?Subject=website%20contact">Email Me</a>
-        </div>
+        
+        <main role="main">
+            <h1 class="text-center">Gregory Norton</h1>
+            <div class="container"></div>
+                <div id="bio" class="card-container">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">About Me</h2>
+                            <hr>
+                            <p class="card-text">Computer enthusiast from electrons to software systems.</p>
+                            <p class="card-text">Studying Computer Science at Ryerson University.</p>
+                            <p class="card-text">Currently employed at the Ontario Ministry of Health and Long-Term Care.</p>
+                            <hr>
+                            <a class="card-link" href="https://github.com/stuffandahalf">My Github</a>
+                            <a class="card-link" href="mailto:gregory.norton@me.com?subject=Website%20Contact">Email me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div id="logos" class="text-center">
+                <div>
+                    <img src="/resources/Ryerson-rgb.png" alt="Ryerson University" />
+                    <img src="/resources/Logo_Ontario.svg" alt="Ontario" />
+                </div>
+            </div>
 
-        <div id="projects" class="outer">
-            <div id="6809" class="inner">
-                <h2><a href="computers/6809">Homebrew Computer</a></h2>
-                <ul>
-                    <li id="os"><a href="https://github.com/stuffandahalf/GANOS-6809">Operating System</a></li>
-                    <li id="emulator"><a href="https://github.com/stuffandahalf/6809emu">6809 Emulator</a></li>
-                    <li id="c compiler"><a href="https://github.com/stuffandahalf/cc6809">C Compiler</a></li>
-                    <li id="g compiler"><a href="https://github.com/stuffandahalf/ggc_6809">G Compiler</a></li>
-                </ul>
+            <!--<div id="projects" class="outer">
+                <div id="6809" class="inner">
+                    <h2><a href="computers/6809">Homebrew Computer</a></h2>
+                    <ul>
+                        <li id="os"><a href="https://github.com/stuffandahalf/GANOS-6809">Operating System</a></li>
+                        <li id="emulator"><a href="https://github.com/stuffandahalf/6809emu">6809 Emulator</a></li>
+                        <li id="c compiler"><a href="https://github.com/stuffandahalf/cc6809">C Compiler</a></li>
+                        <li id="g compiler"><a href="https://github.com/stuffandahalf/ggc_6809">G Compiler</a></li>
+                    </ul>
+                </div>
+                <div id="github" class="inner">
+                    <h2>Github Projects</h2>
+                    <ul>
+                        <li id="website"><a href="https://github.com/stuffandahalf/stuffandahalf.github.io">This website</a></li>
+                        <li id="pulseaudiotool"><a href="https://github.com/stuffandahalf/PulseAudioTool">PulseAudioTool</a></li>
+                        <li id="adb interface"><a href="https://github.com/stuffandahalf/arduino-adb-interface">Arduino ADB Interface</a></li>
+                        <li id="hm62256 lib"><a href="arduino/HM62256">Arduino HM62256 Library</a></li>
+                    </ul>
+                </div>
+                <div id="quicked" class="inner">
+                    <h2>QuickEd Projects</h2>
+                    <p>Worked on the following projects as assistant programmer with QuickEd</p>
+                    <ul>
+                        <li id="quickkeys"><a href="https://github.com/stuffandahalf/Quick-Keys">Quick Keys</a></li>
+                        <li id="quickcards"><a href="https://github.com/MrSprinklez/Quick-Cards-Revamp">Quick Cards</a></li>
+                    </ul>
+                </div>
             </div>
-            <div id="github" class="inner">
-                <h2>Github Projects</h2>
-                <ul>
-                    <li id="website"><a href="https://github.com/stuffandahalf/stuffandahalf.github.io">This website</a></li>
-                    <li id="pulseaudiotool"><a href="https://github.com/stuffandahalf/PulseAudioTool">PulseAudioTool</a></li>
-                    <li id="adb interface"><a href="https://github.com/stuffandahalf/arduino-adb-interface">Arduino ADB Interface</a></li>
-                    <li id="hm62256 lib"><a href="arduino/HM62256">Arduino HM62256 Library</a></li>
-                </ul>
-            </div>
-            <div id="quicked" class="inner">
-                <h2>QuickEd Projects</h2>
-                <p>Worked on the following projects as assistant programmer with QuickEd</p>
-                <ul>
-                    <li id="quickkeys"><a href="https://github.com/stuffandahalf/Quick-Keys">Quick Keys</a></li>
-                    <li id="quickcards"><a href="https://github.com/MrSprinklez/Quick-Cards-Revamp">Quick Cards</a></li>
-                </ul>
-            </div>
-        </div>
 
-        <div id="languages & standards" class="outer">
-            <div id="languages" class="inner">
-                <h2>Programming Languages</h2>
-                <ul>
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>C/C++</li>
-                    <li>Objective-C</li>
-                    <li>x86 Assembly (NASM)</li>
-                    <li>Rust</li>
-                    <li>SmallTalk</li>
-                    <li>Haskell</li>
-                    <li>Elixir</li>
-                    <li>Ruby</li>
-                    <li>PHP</li>
-                    <li>Perl</li>
-                    <li>Classic ASP</li>
-                    <li>JavaScript</li>
-                </ul>
-            </div>
-            <div id="standards" class="inner">
-                <h2>Industry Standards</h2>
-                <ul>
-                    <li>HTML</li>
-                    <li>XML+XSLT</li>
-                    <li>JSON</li>
-                    <li>Git</li>
-                </ul>
-            </div>
-        </div>
-        {% include footer.html %}
+            <div id="languages & standards" class="outer">
+                <div id="languages" class="inner">
+                    <h2>Programming Languages</h2>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C/C++</li>
+                        <li>Objective-C</li>
+                        <li>x86 Assembly (NASM)</li>
+                        <li>Rust</li>
+                        <li>SmallTalk</li>
+                        <li>Haskell</li>
+                        <li>Elixir</li>
+                        <li>Ruby</li>
+                        <li>PHP</li>
+                        <li>Perl</li>
+                        <li>Classic ASP</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div id="standards" class="inner">
+                    <h2>Industry Standards</h2>
+                    <ul>
+                        <li>HTML</li>
+                        <li>XML+XSLT</li>
+                        <li>JSON</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+            </div>-->
+        </main>
+        
+        {% include scripts.html %}
     </body>
 </html>

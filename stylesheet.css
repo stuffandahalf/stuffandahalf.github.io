@@ -1,19 +1,30 @@
-body {
-    margin: 0;
-    padding: 0;
-}
-
-div.header {
-    padding: 10px;
-}
-
-div.outer {
-    clear: both;
-}
-
-div.inner {
-    max-width: 300px;
+main > div {
+    width: 80vw;
     margin: auto;
-    padding: 10px;
-    float: left;
+}
+
+.card-container {
+    width: 60%;
+    margin: auto;
+}
+
+
+.showcase {
+    display: inline-block;
+    width: 30%;
+    padding-bottom: 2%;
+}
+
+@media screen and (max-width: 960px) {
+    main > div {
+        width: 100%;
+    }
+    
+    .card-container {
+        width: 80%;
+    }
+    
+    .showcase {
+        display: initial;
+    }
 }
