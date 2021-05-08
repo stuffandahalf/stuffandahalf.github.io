@@ -1,10 +1,16 @@
----
----
 <!DOCTYPE html>
 
 <html lang="en">
     <head>
-        {% include header.html %}
+        <meta charset="utf-8" />
+        <meta name="author" content="Gregory Norton" />
+        <meta name="copyright" content="Copyright (c) 2018, 2021 Gregory Norton" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+
+
         <meta name="pagename" content="Home page" />
         <title>Gregory Norton</title>
         
@@ -21,7 +27,26 @@
         </style>
     </head>
     <body>
-        {% include navbar.html %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Gregory Norton</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menubar" aria-controls="menubar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="menubar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="navbar-nav mr-auto">
+                        <a class="nav-link" href="/experience">Experience</a>
+                    </li>
+                    <li class="navbar-nav mr-auto">
+                        <a class="nav-link" href="/projects">Projects</a>
+                    </li>
+                    <li class="navbar-nav mr-auto">
+                        <a class="nav-link" href="/skills">Skillset</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
         
         <main role="main">
             <h1 class="text-center">Gregory Norton</h1>
@@ -48,68 +73,14 @@
                     <img src="/resources/Logo_Ontario.svg" alt="Ontario" />
                 </div>
             </div>
-
-            <!--<div id="projects" class="outer">
-                <div id="6809" class="inner">
-                    <h2><a href="computers/6809">Homebrew Computer</a></h2>
-                    <ul>
-                        <li id="os"><a href="https://github.com/stuffandahalf/GANOS-6809">Operating System</a></li>
-                        <li id="emulator"><a href="https://github.com/stuffandahalf/6809emu">6809 Emulator</a></li>
-                        <li id="c compiler"><a href="https://github.com/stuffandahalf/cc6809">C Compiler</a></li>
-                        <li id="g compiler"><a href="https://github.com/stuffandahalf/ggc_6809">G Compiler</a></li>
-                    </ul>
-                </div>
-                <div id="github" class="inner">
-                    <h2>Github Projects</h2>
-                    <ul>
-                        <li id="website"><a href="https://github.com/stuffandahalf/stuffandahalf.github.io">This website</a></li>
-                        <li id="pulseaudiotool"><a href="https://github.com/stuffandahalf/PulseAudioTool">PulseAudioTool</a></li>
-                        <li id="adb interface"><a href="https://github.com/stuffandahalf/arduino-adb-interface">Arduino ADB Interface</a></li>
-                        <li id="hm62256 lib"><a href="arduino/HM62256">Arduino HM62256 Library</a></li>
-                    </ul>
-                </div>
-                <div id="quicked" class="inner">
-                    <h2>QuickEd Projects</h2>
-                    <p>Worked on the following projects as assistant programmer with QuickEd</p>
-                    <ul>
-                        <li id="quickkeys"><a href="https://github.com/stuffandahalf/Quick-Keys">Quick Keys</a></li>
-                        <li id="quickcards"><a href="https://github.com/MrSprinklez/Quick-Cards-Revamp">Quick Cards</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div id="languages & standards" class="outer">
-                <div id="languages" class="inner">
-                    <h2>Programming Languages</h2>
-                    <ul>
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>C/C++</li>
-                        <li>Objective-C</li>
-                        <li>x86 Assembly (NASM)</li>
-                        <li>Rust</li>
-                        <li>SmallTalk</li>
-                        <li>Haskell</li>
-                        <li>Elixir</li>
-                        <li>Ruby</li>
-                        <li>PHP</li>
-                        <li>Perl</li>
-                        <li>Classic ASP</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-                <div id="standards" class="inner">
-                    <h2>Industry Standards</h2>
-                    <ul>
-                        <li>HTML</li>
-                        <li>XML+XSLT</li>
-                        <li>JSON</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
-            </div>-->
         </main>
         
-        {% include scripts.html %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        
+        <script>
+            
+        </script>
     </body>
 </html>
