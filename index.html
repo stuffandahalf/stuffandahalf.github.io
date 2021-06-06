@@ -1,86 +1,88 @@
 <!DOCTYPE html>
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="author" content="Gregory Norton" />
-        <meta name="copyright" content="Copyright (c) 2018, 2021 Gregory Norton" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en" ng-app="App">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+		<title>Gregory Norton{{ title ? ' - ' + title : '' }}</title>
+
+		<link rel="stylesheet" href="styles/common.css" />
+		<link rel="stylesheet" href="{{ css }}" ng-if="css" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+		
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#!/">Gregory Norton</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#nav-content" aria-controls="#nav-content"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="nav-content">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link" href="#!/projects">Projects</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#!/experience">Experience</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#!/blog">Blog</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<main ng-view=""></main>
 
 
-        <meta name="pagename" content="Home page" />
-        <title>Gregory Norton</title>
-        
-        <style>
-            img {
-                width: 25%;
-            }
-            
-            @media screen and (max-width: 960px) {
-                img {
-                    width: 60%;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/">Gregory Norton</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menubar" aria-controls="menubar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="menubar">
-                <ul class="navbar-nav mr-auto">
-                    <li class="navbar-nav mr-auto">
-                        <a class="nav-link" href="/experience">Experience</a>
-                    </li>
-                    <li class="navbar-nav mr-auto">
-                        <a class="nav-link" href="/projects">Projects</a>
-                    </li>
-                    <li class="navbar-nav mr-auto">
-                        <a class="nav-link" href="/skills">Skillset</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        
-        <main role="main">
-            <h1 class="text-center">Gregory Norton</h1>
-            <div class="container"></div>
-                <div id="bio" class="card-container">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">About Me</h2>
-                            <hr>
-                            <p class="card-text">Computer enthusiast from electrons to software systems.</p>
-                            <p class="card-text">Studying Computer Science at Ryerson University.</p>
-                            <p class="card-text">Former Lead Developer at the Ontario Ministry of Health and Long-Term Care.</p>
-                            <hr>
-                            <a class="card-link" href="https://github.com/stuffandahalf">My Github</a>
-                            <a class="card-link" href="mailto:gregory.norton@me.com?subject=Website%20Contact">Email me</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div id="logos" class="text-center">
-                <div>
-                    <img src="/resources/Ryerson-rgb.png" alt="Ryerson University" />
-                    <img src="/resources/Logo_Ontario.svg" alt="Ontario" />
-                </div>
-            </div>
-        </main>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-        
-        <script>
-            
-        </script>
-    </body>
+		<!-- load controllers -->
+		<script src="controllers/home.js"></script>
+		<script src="controllers/projects.js"></script>
+		<script src="controllers/experience.js"></script>
+		<script src="controllers/blog.js"></script>
+
+		<script>
+			var app = angular.module('App', [ 'ngRoute' ]);
+			app.config(function ($routeProvider) {
+				$routeProvider.when('/', {
+					title: 'Home',
+					templateUrl: 'templates/home.html',
+					controller: 'HomeController'
+				}).when('/projects', {
+					title: 'Projects',
+					templateUrl: 'templates/projects.html',
+					controller: 'ProjectsController'
+				}).when('/experience', {
+					title: 'Experience',
+					templateUrl: 'templates/experience.html',
+					controller: 'ExperienceController'
+				}).when('/blog', {
+					title: 'Blog',
+					templateUrl: 'templates/blog.html',
+					controller: 'BlogController'
+				}).otherwise({ redirectTo: '/' });
+			});
+
+			app.controller('HomeController', homeController);
+			app.controller('ProjectsController', projectsController);
+			app.controller('ExperienceController', experienceController);
+			app.controller('BlogController', blogController);
+
+			app.run([ '$rootScope', function ($rootScope) {
+				$rootScope.$on('$routeChangeSuccess',
+					function (event, current, previous) {
+					$rootScope.title = current.$$route.title;
+					$rootScope.css = current.$$route.css;
+				});
+			}]);
+		</script>
+	</body>
 </html>
