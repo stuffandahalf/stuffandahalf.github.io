@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/stuffandahalf-github-io'),
+      dir: require('path').join(__dirname, './coverage/ganorton'),
       subdir: '.',
       reporters: [
         { type: 'html' },
