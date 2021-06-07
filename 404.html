@@ -4,7 +4,8 @@
 	<head>
 		<meta charset="utf-8" />
 		<script>
-			location.href = '/';
+			const target = location.href.replace(/^(?:\/\/|[^/]+)*\//, '');
+			location.href='/?redirectTo=/' + target;
 		</script>
 	</head>
 	<body><h1>404</h1></body>
