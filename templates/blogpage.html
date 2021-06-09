@@ -1,0 +1,9 @@
+<h1 ng-if="!article">Article not found</h1>
+<div ng-if="article">
+	<h1 ng-bind="u.getContents(article, 'title');"></h1>
+	<h4>By Gregory Norton</h2>
+	<h5 ng-bind="u.getDate(article, 'date');"></h3>
+	
+	<p ng-repeat="paragraph in article.getElementsByTagName('paragraph')"
+		ng-bind="paragraph.textContent"></p>
+</div>

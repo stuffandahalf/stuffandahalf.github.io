@@ -1,3 +1,5 @@
+'use strict';
+
 function homeController($scope, $location, $routeParams)
 {
 	if ($routeParams.redirectTo) {
@@ -5,6 +7,7 @@ function homeController($scope, $location, $routeParams)
 		const path = $routeParams.redirectTo;
 		$location.search({});
 		$location.path(path);
+		$location.replace();
 	}
 }
 

@@ -6,12 +6,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<base href="/" target="_blank" />
 
-		<title>Gregory Norton{{ title ? ' - ' + title : '' }}</title>
+		<title ng-bind="'Gregory Norton' + (title ? ' - ' + title : '')">
+			Gregory Norton
+		</title>
 
 		<link rel="stylesheet" href="css/common.css" />
 		<link rel="stylesheet" ng-href="{{ css }}" ng-if="css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
@@ -19,7 +21,8 @@
 		
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark"
+			ng-controller="NavController">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/">Gregory Norton</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -29,14 +32,10 @@
 				</button>
 				<div class="collapse navbar-collapse" id="nav-content">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link" href="/projects">Projects</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/experience">Experience</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/blog">Blog</a>
+						<li class="nav-item" ng-repeat="target in targets"
+							ng-class="{ active: isActive(target) }">
+							<a class="nav-link" ng-href="{{ target.target }}"
+								ng-bind="target.text"></a>
 						</li>
 					</ul>
 				</div>
@@ -50,19 +49,22 @@
 			<!--<a href="/map">Site Map</a>-->
 		</footer>
 
+		<!-- load utility libraries -->
+		<script src="lib/blog.js"></script>
 
 		<!-- load controllers -->
 		<script src="controllers/home.js"></script>
 		<script src="controllers/projects.js"></script>
 		<script src="controllers/experience.js"></script>
 		<script src="controllers/blog.js"></script>
+		<script src="controllers/blogpage.js"></script>
 
 		<script>
 			var app = angular.module('App', [ 'ngRoute' ]);
 			app.config(function ($locationProvider, $routeProvider) {
 				$locationProvider.html5Mode(true).hashPrefix('!');
 				$routeProvider.when('/', {
-					title: 'Home',
+					//title: 'Home',
 					templateUrl: 'templates/home.html',
 					css: 'css/home.css',
 					controller: 'HomeController'
@@ -77,7 +79,12 @@
 				}).when('/blog', {
 					title: 'Blog',
 					templateUrl: 'templates/blog.html',
+					css: 'css/blog.css',
 					controller: 'BlogController'
+				}).when('/blog/:article', {
+					title: 'Blog',
+					templateUrl: 'templates/blogpage.html',
+					controller: 'BlogPageController'
 				}).otherwise({ redirectTo: '/' });
 			});
 
@@ -85,6 +92,20 @@
 			app.controller('ProjectsController', projectsController);
 			app.controller('ExperienceController', experienceController);
 			app.controller('BlogController', blogController);
+			app.controller('BlogPageController', blogPageController);
+			app.controller('NavController', function ($scope, $location) {
+				$scope.targets = [
+					{ text: 'Projects', target: '/projects' },
+					{ text: 'Experience', target: '/experience' },
+					{ text: 'Blog', target: '/blog' }
+				];
+				
+				$scope.isActive = function (target) {
+					return $location.path().startsWith(target.target);
+				}
+			});
+			
+			app.value('blogData', { blog: null, currentArticle: null });
 
 			app.run([ '$rootScope', function ($rootScope) {
 				$rootScope.$on('$routeChangeSuccess',
