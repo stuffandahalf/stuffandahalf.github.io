@@ -5,6 +5,7 @@
     <xs:sequence>
       <xs:element name="article" maxOccurs="unbounded">
         <xs:complexType>
+          <xs:attribute name="url" type="xs:string" use="required" />
           <xs:sequence>
             <xs:element name="date" type="xs:date" />
             <xs:element name="title" type="xs:string" />

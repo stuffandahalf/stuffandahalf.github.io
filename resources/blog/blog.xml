@@ -1,66 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--<?xml-stylesheet type="text/xsl" href="blog.xslt" ?>-->
+<?xml-stylesheet type="text/xsl" href="blog.xslt" ?>
 <blog>
-	<article url="testb">
-		<date>2021-06-05</date>
-		<title>Structure of Unix Version 7 Filesystem</title>
-		<abstract>
-			For the first time, the file system of the vastly influential
-			version of Unix has been documented, featuring examples for locating and
-			reading files.
-		</abstract>
-		<content>
-			<paragraph>
-				Research Unix version 7 was a significant step in the
-				development of this operating system, introducing some of the
-				more influential features that we still rely on today. Thanks to
-				the release of research unix source code, a port of version 7 to
-				x86 by Nordier &amp; Associates, and some code from NetBSD, I
-				have been able to piece together an understanding of how the
-				filesystem can be processed to located and read files.
-			</paragraph>
-			<paragraph>
-				I was motivated to do this, as based on the source code for the
-				superblock, and the man files from version 7, it appeared that
-				the unix filesystem could be considered a highly simplified
-				variant of the extended file system used by Linux. The goal is
-				to use these studies as a stepping stone towards understanding
-				the extended file system. The Unix file system is conventionally
-				limited to about 150MiB, which is not practical in the modern
-				era. 
-			</paragraph>
-		</content>
-	</article>
-	<article url="testa">
-		<date>2021-06-05</date>
-		<title>Structure of Unix Version 7 Filesystem</title>
-		<abstract>
-			For the first time, the file system of the vastly influential
-			version of Unix has been documented, featuring examples for locating and
-			reading files.
-		</abstract>
-		<content>
-			<paragraph>
-				Research Unix version 7 was a significant step in the
-				development of this operating system, introducing some of the
-				more influential features that we still rely on today. Thanks to
-				the release of research unix source code, a port of version 7 to
-				x86 by Nordier &amp; Associates, and some code from NetBSD, I
-				have been able to piece together an understanding of how the
-				filesystem can be processed to located and read files.
-			</paragraph>
-			<paragraph>
-				I was motivated to do this, as based on the source code for the
-				superblock, and the man files from version 7, it appeared that
-				the unix filesystem could be considered a highly simplified
-				variant of the extended file system used by Linux. The goal is
-				to use these studies as a stepping stone towards understanding
-				the extended file system. The Unix file system is conventionally
-				limited to about 150MiB, which is not practical in the modern
-				era. 
-			</paragraph>
-		</content>
-	</article>
 	<article url='v7fs'>
 		<date>2021-06-05</date>
 		<title>Structure of Unix Version 7 Filesystem</title>
