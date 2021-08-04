@@ -4,3 +4,7 @@ _site
 .jekyll-metadata
 
 *.lock
+
+node_modules
+.nuxt
+

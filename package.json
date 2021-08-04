@@ -7,6 +7,12 @@
 		"start": "nuxt start"
 	},
 	"dependencies": {
-		"nuxt": "^2.15.7"
+		"jquery": "^3.6.0",
+		"nuxt": "^2.15.7",
+		"vue-fragment": "^1.5.2"
+	},
+	"devDependencies": {
+		"sass": "^1.37.4",
+		"sass-loader": "^10.2.0"
 	}
 }
