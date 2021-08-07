@@ -33,7 +33,7 @@
 				<div class="collapse navbar-collapse" id="nav-content">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item" ng-repeat="target in targets"
-							ng-class="{ active: isActive(target) }">
+							ng-class="{ 'active': isActive(target) }">
 							<a class="nav-link" ng-href="{{ target.target }}"
 								ng-bind="target.text"></a>
 						</li>
@@ -53,17 +53,46 @@
 		<script src="lib/blog.js"></script>
 
 		<!-- load controllers -->
-		<script src="controllers/home.js"></script>
+		<!--<script src="controllers/home.js"></script>
 		<script src="controllers/projects.js"></script>
 		<script src="controllers/experience.js"></script>
 		<script src="controllers/blog.js"></script>
-		<script src="controllers/blogpage.js"></script>
+		<script src="controllers/blogpage.js"></script>-->
+		
+		<!-- load components -->
+		<script src="components/home/home.component.js"></script>
+		<script src="components/projects/projects.component.js"></script>
+		<script src="components/experience/experience.component.js"></script>
+		<script src="components/blog/blog.component.js"></script>
+		<script src="components/blogpage/blogpage.component.js"></script>
 
 		<script>
 			var app = angular.module('App', [ 'ngRoute' ]);
 			app.config(function ($locationProvider, $routeProvider) {
 				$locationProvider.html5Mode(true).hashPrefix('!');
 				$routeProvider.when('/', {
+					template: '<home />'
+				}).when('/projects', {
+					template: '<projects />'
+				}).when('/experience', {
+					template: '<experience />'
+				}).when('/blog/:article?', {
+					template: '<blog articles="$resolve.articles" />',
+					reloadOnUrl: false,
+					resolve: {
+						articles: function ($http) {
+							return new Promise(function (resolve, reject) {
+								$http.get('/resources/blog/blog.xml').then(function (response) {
+									var parser = new DOMParser();
+									resolve(parser.parseFromString(response.data, 'text/xml').firstElementChild);
+								}).catch(function (errs) {
+									reject(errs);
+								});
+							});
+						}
+					}
+				}).otherwise({ redirectTo: '/' });
+				/*$routeProvider.when('/', {
 					//title: 'Home',
 					templateUrl: 'templates/home.html',
 					css: 'css/home.css',
@@ -85,14 +114,20 @@
 					title: 'Blog',
 					templateUrl: 'templates/blogpage.html',
 					controller: 'BlogPageController'
-				}).otherwise({ redirectTo: '/' });
+				}).otherwise({ redirectTo: '/' });*/
 			});
 
-			app.controller('HomeController', homeController);
+			app.component('home', homeComponent);
+			app.component('projects', projectsComponent);
+			app.component('experience', experienceComponent);
+			app.component('blog', blogComponent);
+			app.component('blog-page', blogPageComponent);
+
+			/*app.controller('HomeController', homeController);
 			app.controller('ProjectsController', projectsController);
 			app.controller('ExperienceController', experienceController);
 			app.controller('BlogController', blogController);
-			app.controller('BlogPageController', blogPageController);
+			app.controller('BlogPageController', blogPageController);*/
 			app.controller('NavController', function ($scope, $location) {
 				$scope.targets = [
 					{ text: 'Projects', target: '/projects' },
@@ -101,9 +136,14 @@
 				];
 				
 				$scope.isActive = function (target) {
+					//~ console.log($location.path());
+					//~ console.log(target);
+					//~ console.log($location.path().startsWith(target.target));
 					return $location.path().startsWith(target.target);
 				}
 			});
+			
+			app.factory('blogFactory', blogFactory);
 			
 			app.value('blogData', { blog: null, currentArticle: null });
 
